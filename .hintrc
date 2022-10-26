@@ -3,6 +3,23 @@
     "development"
   ],
   "hints": {
-    "axe/forms": "off"
-  }
+    "axe/forms": "off",
+    "compat-api/html": [
+      "default",
+      {
+        "ignore": [
+          "meta[name=theme-color]"
+        ]
+      }
+    ]
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not and_ff <= 104",
+    "not firefox <= 104",
+    "not ios_saf <= 14.8",
+    "not opera <= 89",
+    "not safari <= 14.1"
+  ]
 }

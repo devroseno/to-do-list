@@ -13,6 +13,8 @@ export const Container = styled.div(({done}:ContainerProps)=>(
     border-radius: 10px;
     margin-bottom: 10px;
     align-itens: center;
+    margin-top: 10px;
+
 
     input {
         width: 25px;

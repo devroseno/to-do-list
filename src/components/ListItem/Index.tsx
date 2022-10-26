@@ -9,6 +9,10 @@ type Props = {
 export const ListItem = ({item}: Props) => {
     const [isChecked, setIsChecked] = useState(item.done);
 
+    const handleStateTask = () => {
+
+    }
+
     return(
         <C.Container done={isChecked}>
             <input
@@ -16,7 +20,7 @@ export const ListItem = ({item}: Props) => {
             checked={isChecked}
             onChange={event => setIsChecked(event.target.checked)}
             />
-            <label>{item.name}</label>
+            <label>{item.name} - {item.done.toString()}</label>
         </C.Container>
     );
 }

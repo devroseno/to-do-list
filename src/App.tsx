@@ -4,7 +4,7 @@ import { Item } from './types/Item';
 import { ListItem } from './components/ListItem/Index';
 import { AddArea } from './components/AddArea';
 import React from 'react';
-import { render } from 'react-dom';
+import { render } from 'react-dom'
 import * as C from './App.styles';
 window.React = React;
 
@@ -22,6 +22,19 @@ const App = () => {
     });
 
     setList(newList);
+
+  }
+
+  const handleTaskChange = (id: number, done: boolean) => {
+
+    let newList = [...list];
+    for(let i in newList){
+      if(newList[i].id === id) {
+        newList[i].done = done;
+      }
+    }
+
+    setList(newList);
   }
 
   return(
@@ -32,7 +45,11 @@ const App = () => {
         <AddArea onEnter={handleAddTask} />
 
         {list.map((item, index)=>(
-          <ListItem key={index} item={item} />
+          <ListItem
+          key={index}
+          item={item}
+          onChange={handleTaskChange}
+          />
         ))}
         
       </C.Area>

@@ -10,16 +10,18 @@ export const AddArea = ({ onEnter }: Props) => {
     const [inputText, setInputText] = useState('');
 
     const handleKeyUp = (event: KeyboardEvent) => {
-        if(event.code === 'Enter' && inputText !== '') {
+        if((event.code === 'Enter' || event.code === 'NumpadEnter') && inputText !== '') {
             onEnter(inputText);
-            setInputText(' ');
+            setInputText('');
         }
+
     }
 
     return(
         <C.Container>
             <div className="iconAdd"><FaPlusCircle/></div>
             <input
+                required
                 type="text"
                 placeholder="Adicione uma nova tarefa"
                 value={inputText}
